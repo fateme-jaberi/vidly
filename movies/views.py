@@ -6,6 +6,4 @@ from .models import Movie
 # Create your views here.
 def index(request):
     movies = Movie.objects.all()
-    # get the titles:
-    output = ", ".join([m.title for m in movies])
-    return HttpResponse(output)
+    return render(request, "movies/index.html", {"movies": movies})
