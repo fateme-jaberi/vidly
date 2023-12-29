@@ -1,9 +1,12 @@
 from django.urls import path
 from . import views
 
+
+app_name = "movies"
+
 # endpoint: /movies/
 # endpoint: /movies/1
 urlpatterns = [
-    path("", views.index, name="movies_index"),
-    path("<int:movie_id>", views.detail, name="movies_detail"),
+    path("", views.index, name="index"),
+    path("<int:movie_id>", views.detail, name="detail"),
 ]
